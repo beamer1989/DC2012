@@ -9,11 +9,13 @@ public:
   enum MessageType { 
 	CHAT, 
 	CREATION, 
-    CONNECTION,
+	CONNECTION,
 	DELETION, 
 	UPDATE, 
 	ACTION, 
-	STATUS
+	STATUS,
+	HIT,
+	DEATH
   };
   static const size_t MAXMSGDATA = 254;
   static const size_t MSGHEADER;
