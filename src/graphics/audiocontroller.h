@@ -7,13 +7,15 @@
 #include <QVector>
 #include <QFile>
 #include <QTextStream>
-#include <Phonon/MediaObject>
-#include <Phonon/AudioOutput>
+#include <phonon/MediaObject>
+#include <phonon/AudioOutput>
 #include <QDesktopServices>
 
 class AudioController : public QObject
 {
 Q_OBJECT
+Q_ENUMS(Sounds)
+
 public:
     explicit AudioController(QObject *parent = 0);
     ~AudioController();

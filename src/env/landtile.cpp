@@ -40,10 +40,10 @@
 --                  value to instanciate a propper graphic for that tile.
 -------------------------------------------------------------------------------------*/
 
-LandTile::LandTile(const Point& position)
-    : Tile(position)
+LandTile::LandTile(Point position)
+    : Tile(QPixmap(TILE_LAND1), position)
 {
-
+  
 }
 
 

@@ -96,7 +96,7 @@ class GameObject
 --                  posX    X-coordinate
 --                  posY    Y-coordinate
 -----------------------------------------------------------------------------*/
-        explicit GameObject(int objID, ObjectType type, double degree,
+        explicit GameObject(ObjectType type, int objID, double degree,
                                                     double posX, double posY);
 
 /*-----------------------------------------------------------------------------
@@ -202,6 +202,26 @@ class GameObject
 --                  Getter for pos_
 -----------------------------------------------------------------------------*/
         Point getPosition() const;
+
+/*-----------------------------------------------------------------------------
+--  FUNCTION:
+--                  getHitbox
+--  DATE:
+--                  April 6, 2012
+--  REVISIONS:
+--
+--  DESIGNER:
+--                  Po Hsu
+--  PROGRAMMER:
+--                  Po Hsu
+--  INTERFACE:
+--                  getHitbox() const
+--  RETURNS:
+--                  Hitbox
+--  NOTES:
+--                  Getter for hb_
+-----------------------------------------------------------------------------*/
+		Hitbox getHitbox() const;
         
 /*-----------------------------------------------------------------------------
 --  FUNCTION:
@@ -245,6 +265,12 @@ class GameObject
         virtual void print(std::ostream& os) const;
         
         void setObjID(int id);
+        Point getSpriteTopLeft() const;
+        void setHitBox(Point tl,
+                       Point tr,
+                       Point bl,
+                       Point br);
+        void printHitBox(std::ostream& os) const;
 
         virtual void update(const std::string &str) = 0;
         virtual std::string toString() const = 0;
